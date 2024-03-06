@@ -109,12 +109,36 @@ def calculate_normal(quantiles, powers):
         plt.ylabel('Density', fontsize=14)
 
         plt.axvline(x=LeftMathematicalExpectation - RightDispersion, color='purple', linewidth=2, clip_on=False, label='min \mu - max\sigma')
+        plt.annotate(f'{LeftMathematicalExpectation - RightDispersion:.2f}', 
+             xy=(LeftMathematicalExpectation - RightDispersion, 0), 
+             xytext=(LeftMathematicalExpectation - RightDispersion, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(LeftMathematicalExpectation - RightDispersion, 0, marker='o', markersize=10, color='purple')
+
         plt.axvline(x=RightMathematicalExpectation + RightDispersion, color='purple', linewidth=2, clip_on=False, label='max \mu + max\sigma')
+        plt.annotate(f'{RightMathematicalExpectation + RightDispersion:.2f}', 
+             xy=(RightMathematicalExpectation + RightDispersion, 0), 
+             xytext=(RightMathematicalExpectation + RightDispersion, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(RightMathematicalExpectation + RightDispersion, 0, marker='o', markersize=10, color='purple')
+
         plt.axvline(x=LeftMathematicalExpectation, color='red', linewidth=2, clip_on=False, label='min \mu')
+        plt.annotate(f'{LeftMathematicalExpectation:.2f}', 
+             xy=(LeftMathematicalExpectation, 0), 
+             xytext=(LeftMathematicalExpectation, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(LeftMathematicalExpectation, 0, marker='o', markersize=10, color='red')
+
+
         plt.axvline(x=RightMathematicalExpectation, color='red', linewidth=2, clip_on=False, label='max \mu')
+        plt.annotate(f'{RightMathematicalExpectation:.2f}', 
+             xy=(RightMathematicalExpectation, 0), 
+             xytext=(RightMathematicalExpectation, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(RightMathematicalExpectation, 0, marker='o', markersize=10, color='red')
         plt.legend()
         plt.savefig(f'{"normal"}, size {power}.png')
@@ -177,13 +201,38 @@ def pyasson_distribution(quantiles, powers):
         plt.ylabel('Density', fontsize=14)
 
         plt.axvline(x=LeftMathematicalExpectation - RightDispersion, color='purple', linewidth=2, clip_on=False, label='min \mu - max\sigma')
+        plt.annotate(f'{LeftMathematicalExpectation - RightDispersion:.2f}', 
+             xy=(LeftMathematicalExpectation - RightDispersion, 0), 
+             xytext=(LeftMathematicalExpectation - RightDispersion, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(LeftMathematicalExpectation - RightDispersion, 0, marker='o', markersize=10, color='purple')
+
         plt.axvline(x=RightMathematicalExpectation + RightDispersion, color='purple', linewidth=2, clip_on=False, label='max \mu + max\sigma')
+        plt.annotate(f'{RightMathematicalExpectation + RightDispersion:.2f}', 
+             xy=(RightMathematicalExpectation + RightDispersion, 0), 
+             xytext=(RightMathematicalExpectation + RightDispersion, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(RightMathematicalExpectation + RightDispersion, 0, marker='o', markersize=10, color='purple')
+
         plt.axvline(x=LeftMathematicalExpectation, color='red', linewidth=2, clip_on=False, label='min \mu')
+        plt.annotate(f'{LeftMathematicalExpectation:.2f}', 
+             xy=(LeftMathematicalExpectation, 0), 
+             xytext=(LeftMathematicalExpectation, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(LeftMathematicalExpectation, 0, marker='o', markersize=10, color='red')
+
+
         plt.axvline(x=RightMathematicalExpectation, color='red', linewidth=2, clip_on=False, label='max \mu')
+        plt.annotate(f'{RightMathematicalExpectation:.2f}', 
+             xy=(RightMathematicalExpectation, 0), 
+             xytext=(RightMathematicalExpectation, -0.02), 
+             ha='center', 
+             fontsize=10)
         plt.plot(RightMathematicalExpectation, 0, marker='o', markersize=10, color='red')
+        plt.legend()
 
         plt.savefig(f'{"poisson"}, size {power}.png')
     
